@@ -6,10 +6,6 @@ class MongoDB {
   static #logger = new Logger({ source: "MongoDB" });
 
   static async init() {
-    const clientOptions = {
-      serverApi: { version: "1", strict: true, deprecationErrors: true },
-    };
-
     const { DB_USERNAME, DB_PASSWORD, DB_HOST, DB_NAME, DB_OPTIONS } =
       process.env;
 
@@ -29,7 +25,7 @@ class MongoDB {
       }
 
       MongoDB.#logger.info(`Attempting to connect to MongoDB at ${DB_HOST}...`);
-      MongoDB.#connection = await mongoose.connect(url, clientOptions);
+      MongoDB.#connection = await mongoose.connect(url);
       MongoDB.#logger.info(
         `Successfully connected to MongoDB database: ${DB_NAME} on host: ${DB_HOST}`
       );

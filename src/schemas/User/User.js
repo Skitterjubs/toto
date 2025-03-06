@@ -1,4 +1,4 @@
-import mongoose, { set } from "mongoose";
+import mongoose from "mongoose";
 import Logger from "../../common/Logger.js";
 import setUpMaster from "./statics/setUpMaster.js";
 

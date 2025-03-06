@@ -1,7 +1,7 @@
 export default async function setUpMaster(User, logger) {
   try {
     logger.info("Checking if master user already exists...");
-    const exists = await User.exists();
+    const exists = await User.exists({ roles: "MASTER" });
 
     if (exists) {
       logger.info("Master user already exists. Skipping creation.");
