@@ -5,7 +5,7 @@ class ArgosQuery {
   static #argos = new Argos();
   static #logger = new Logger({ source: "ArgosQuery" });
 
-  async getStudentsList(careerCode, periodCode) {
+  static async getStudentsList(careerCode, periodCode) {
     try {
       const result = await ArgosQuery.#argos.runQuery(
         "ADO_PROD",
