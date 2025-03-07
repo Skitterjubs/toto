@@ -41,7 +41,9 @@ class Argos {
               }`,
     });
 
-    Argos.#logger.info("Executing Argos query...");
+    Argos.#logger.info(
+      `Executing Argos query. Request number: ${Argos.#requestCounter}`
+    );
 
     try {
       const res = await Argos.#instance.post(

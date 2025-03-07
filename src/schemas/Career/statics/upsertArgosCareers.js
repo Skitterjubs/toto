@@ -10,7 +10,7 @@ export default async function pullArgosCareers(Career, logger) {
       careers.map((career) => ({
         updateOne: {
           filter: { code: career.code },
-          update: { site: career.site, name: career.name },
+          update: { ...career },
           upsert: true,
         },
       }))
